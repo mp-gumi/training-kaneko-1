@@ -1,5 +1,5 @@
 import React from "react";
 
-const Containers = () => {
+export const Containers = () => {
     return <div>container</div>
 }
