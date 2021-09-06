@@ -1,7 +1,13 @@
+import Header from "components/Header";
 import React from "react";
 
 const News = () => {
-  return <div>news</div>;
+  return (
+    <div>
+      <Header />
+      news
+    </div>
+  );
 };
 
 export default News;

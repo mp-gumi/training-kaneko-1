@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
+import Containers from "containers";
 
 ReactDOM.render(
   <React.StrictMode>
-    <div>sample</div>
+    <Containers />
   </React.StrictMode>,
   document.getElementById("root")
 );
