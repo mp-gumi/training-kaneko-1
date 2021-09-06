@@ -1,5 +1,8 @@
 import React from "react";
+import Pages from "./pages";
 
-export const Containers = () => {
-  return <div>container</div>;
+const Containers = () => {
+  return <Pages />;
 };
+
+export default Containers;
