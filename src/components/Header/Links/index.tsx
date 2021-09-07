@@ -1,4 +1,6 @@
+/** @jsxImportSource @emotion/react */
 import React from "react";
+import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
 
 const Links = () => {
@@ -9,14 +11,35 @@ const Links = () => {
     { displayName: "CONTACT", urlName: "/#contact" },
     { displayName: "NEWS", urlName: "/news" },
   ].map(({ displayName, urlName }) => (
-    <li key={displayName}>
-      <Link to={urlName}>{displayName}</Link>
+    <li
+      css={css`
+        list-style: none;
+      `}
+      key={displayName}
+    >
+      <Link
+        css={css`
+          padding-left: 16px;
+          text-decoration: none;
+          color: black;
+        `}
+        to={urlName}
+      >
+        {displayName}
+      </Link>
     </li>
   ));
 
   return (
     <nav>
-      <ul>{items}</ul>
+      <ul
+        css={css`
+          display: flex;
+          padding-right: 60px;
+        `}
+      >
+        {items}
+      </ul>
     </nav>
   );
 };
