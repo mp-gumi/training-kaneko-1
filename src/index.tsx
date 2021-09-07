@@ -2,10 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import Containers from "containers";
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Containers />
+    <Router>
+      <Containers />
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );

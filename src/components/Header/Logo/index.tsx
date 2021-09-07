@@ -1,12 +1,10 @@
 import React from "react";
 import logo from "./D&S_logo.png";
 
-const Logo = () => {
-  return (
-    <div>
-      <img src={logo} alt="D&amp;S Solutions" />
-    </div>
-  );
-};
+const Logo = () => (
+  <h1>
+    <img alt="D&amp;S Solutions" src={logo} />
+  </h1>
+);
 
 export default Logo;
