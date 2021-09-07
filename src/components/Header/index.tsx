@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
 import { css } from "@emotion/react";
-import Links from "./Links";
+import Menu from "./Menu";
 import Logo from "./Logo";
 
 const Header = () => {
@@ -16,7 +16,7 @@ const Header = () => {
       `}
     >
       <Logo />
-      <Links />
+      <Menu />
     </div>
   );
 };
