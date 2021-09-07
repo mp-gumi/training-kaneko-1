@@ -3,7 +3,7 @@ import React from "react";
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
 
-const Links = () => {
+const Menu = () => {
   const items = [
     { displayName: "TOPICS", urlName: "/#topics" },
     { displayName: "COMPANY", urlName: "/#company" },
@@ -44,4 +44,4 @@ const Links = () => {
   );
 };
 
-export default Links;
+export default Menu;
