@@ -1,9 +1,64 @@
 /** @jsxImportSource @emotion/react */
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
+import { Link } from "react-router-dom";
 import { css } from "@emotion/react";
 
-const HamburgerMenu = () => {
-  return <div>menu</div>;
+type HamburgerMenuProps = {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+};
+
+const HamburgerMenu = (props: HamburgerMenuProps) => {
+  const { isOpen, setIsOpen } = props;
+  const items = [
+    { displayName: "TOPICS", urlName: "/#topics" },
+    { displayName: "COMPANY", urlName: "/#company" },
+    { displayName: "ACCESS", urlName: "/#access" },
+    { displayName: "CONTACT", urlName: "/#contact" },
+    { displayName: "NEWS", urlName: "/news" },
+  ].map(({ displayName, urlName }) => (
+    <li
+      css={css`
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+      `}
+      key={displayName}
+    >
+      <Link
+        css={css`
+          text-decoration: none;
+          color: black;
+        `}
+        onClick={(prevIsOpen) => setIsOpen(!prevIsOpen)}
+        to={urlName}
+      >
+        {displayName}
+      </Link>
+    </li>
+  ));
+
+  return (
+    <nav
+      css={css`
+        background-color: #fff;
+        height: ${isOpen ? "50vh" : 0};
+        overflow: hidden;
+        transition-duration: 350ms;
+      `}
+    >
+      <ul
+        css={css`
+          display: grid;
+          grid-auto-flow: row;
+          height: 50vh;
+        `}
+      >
+        {items}
+      </ul>
+    </nav>
+  );
 };
 
 export default HamburgerMenu;

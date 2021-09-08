@@ -14,14 +14,28 @@ const Menu = () => {
     <li
       css={css`
         list-style: none;
+        padding-left: 16px;
       `}
       key={displayName}
     >
       <Link
         css={css`
-          padding-left: 16px;
+          color: #000;
+          position: relative;
           text-decoration: none;
-          color: black;
+          &::after {
+            background: #000;
+            bottom: -6px;
+            content: "";
+            height: 2px;
+            left: 0;
+            position: absolute;
+            transition: 250ms ease-in-out;
+            width: 0;
+          }
+          &:hover::after {
+            width: 100%;
+          }
         `}
         to={urlName}
       >
@@ -31,7 +45,13 @@ const Menu = () => {
   ));
 
   return (
-    <nav>
+    <nav
+      css={css`
+        @media (max-width: 767px) {
+          display: none;
+        }
+      `}
+    >
       <ul
         css={css`
           display: flex;
