@@ -1,17 +1,16 @@
 /** @jsxImportSource @emotion/react */
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useCallback } from "react";
 import { css } from "@emotion/react";
 
-type HamburgerBarProps = {
+export type HamburgerBarProps = {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 
-const HamburgerBar = (props: HamburgerBarProps) => {
-  const { isOpen, setIsOpen } = props;
-  const handleClick = () => {
+const HamburgerBar = ({ isOpen, setIsOpen }: HamburgerBarProps) => {
+  const handleClick = useCallback(() => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
-  };
+  }, []);
 
   return (
     <button
@@ -30,7 +29,7 @@ const HamburgerBar = (props: HamburgerBarProps) => {
     >
       <span
         css={css`
-          background-color: #000000;
+          background-color: #000;
           height: 3px;
           transform: rotate(${isOpen ? "30deg" : 0});
           transform-origin: left;
@@ -40,7 +39,7 @@ const HamburgerBar = (props: HamburgerBarProps) => {
       />
       <span
         css={css`
-          background-color: #000000;
+          background-color: #000;
           height: 3px;
           opacity: ${isOpen ? 0 : 1};
           transition-duration: 350ms;
@@ -49,7 +48,7 @@ const HamburgerBar = (props: HamburgerBarProps) => {
       />
       <span
         css={css`
-          background-color: #000000;
+          background-color: #000;
           height: 3px;
           transform: rotate(${isOpen ? "-30deg" : 0});
           transform-origin: left;

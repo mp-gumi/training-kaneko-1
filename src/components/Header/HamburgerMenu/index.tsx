@@ -1,43 +1,48 @@
 /** @jsxImportSource @emotion/react */
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useCallback, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { css } from "@emotion/react";
 
-type HamburgerMenuProps = {
+export type HamburgerMenuProps = {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 
-const HamburgerMenu = (props: HamburgerMenuProps) => {
-  const { isOpen, setIsOpen } = props;
-  const items = [
-    { displayName: "TOPICS", urlName: "/#topics" },
-    { displayName: "COMPANY", urlName: "/#company" },
-    { displayName: "ACCESS", urlName: "/#access" },
-    { displayName: "CONTACT", urlName: "/#contact" },
-    { displayName: "NEWS", urlName: "/news" },
-  ].map(({ displayName, urlName }) => (
-    <li
-      css={css`
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        list-style: none;
-      `}
-      key={displayName}
-    >
-      <Link
+const HamburgerMenu = ({ isOpen, setIsOpen }: HamburgerMenuProps) => {
+  const handleClick = useCallback(() => {
+    setIsOpen((prevIsOpen) => !prevIsOpen);
+  }, []);
+
+  const items = useMemo(() => {
+    return [
+      { displayName: "TOPICS", urlName: "/#topics" },
+      { displayName: "COMPANY", urlName: "/#company" },
+      { displayName: "ACCESS", urlName: "/#access" },
+      { displayName: "CONTACT", urlName: "/#contact" },
+      { displayName: "NEWS", urlName: "/news" },
+    ].map(({ displayName, urlName }) => (
+      <li
         css={css`
-          text-decoration: none;
-          color: black;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          list-style: none;
         `}
-        onClick={(prevIsOpen) => setIsOpen(!prevIsOpen)}
-        to={urlName}
+        key={displayName}
       >
-        {displayName}
-      </Link>
-    </li>
-  ));
+        <Link
+          css={css`
+            color: #000;
+            text-decoration: none;
+          `}
+          onClick={handleClick}
+          to={urlName}
+        >
+          {displayName}
+        </Link>
+      </li>
+    ));
+  }, []);
 
   return (
     <nav
