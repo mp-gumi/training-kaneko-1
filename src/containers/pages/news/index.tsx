@@ -1,11 +1,11 @@
 import Header from "components/Header";
 import React from "react";
 
-const Pages = () => (
+const News = () => (
   <div>
     <Header />
-    top
+    news
   </div>
 );
 
-export default Pages;
+export default News;
