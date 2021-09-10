@@ -13,36 +13,38 @@ const HamburgerMenu = ({ isOpen, setIsOpen }: HamburgerMenuProps) => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
   }, [setIsOpen]);
 
-  const items = useMemo(() => {
-    return [
-      { displayName: "TOPICS", urlName: "/#topics" },
-      { displayName: "COMPANY", urlName: "/#company" },
-      { displayName: "ACCESS", urlName: "/#access" },
-      { displayName: "CONTACT", urlName: "/#contact" },
-      { displayName: "NEWS", urlName: "/news" },
-    ].map(({ displayName, urlName }) => (
-      <li
-        css={css`
-          align-items: center;
-          display: flex;
-          justify-content: center;
-          list-style: none;
-        `}
-        key={displayName}
-      >
-        <Link
+  const items = useMemo(
+    () =>
+      [
+        { displayName: "TOPICS", urlName: "/#topics" },
+        { displayName: "COMPANY", urlName: "/#company" },
+        { displayName: "ACCESS", urlName: "/#access" },
+        { displayName: "CONTACT", urlName: "/#contact" },
+        { displayName: "NEWS", urlName: "/news" },
+      ].map(({ displayName, urlName }) => (
+        <li
           css={css`
-            color: #000;
-            text-decoration: none;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            list-style: none;
           `}
-          onClick={handleClick}
-          to={urlName}
+          key={displayName}
         >
-          {displayName}
-        </Link>
-      </li>
-    ));
-  }, [handleClick]);
+          <Link
+            css={css`
+              color: #000;
+              text-decoration: none;
+            `}
+            onClick={handleClick}
+            to={urlName}
+          >
+            {displayName}
+          </Link>
+        </li>
+      )),
+    [handleClick]
+  );
 
   return (
     <nav
