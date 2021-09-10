@@ -11,7 +11,7 @@ export type HamburgerMenuProps = {
 const HamburgerMenu = ({ isOpen, setIsOpen }: HamburgerMenuProps) => {
   const handleClick = useCallback(() => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
-  }, []);
+  }, [setIsOpen]);
 
   const items = useMemo(() => {
     return [
@@ -42,7 +42,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }: HamburgerMenuProps) => {
         </Link>
       </li>
     ));
-  }, []);
+  }, [handleClick]);
 
   return (
     <nav

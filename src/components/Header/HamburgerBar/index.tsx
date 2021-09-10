@@ -10,7 +10,7 @@ export type HamburgerBarProps = {
 const HamburgerBar = ({ isOpen, setIsOpen }: HamburgerBarProps) => {
   const handleClick = useCallback(() => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
-  }, []);
+  }, [setIsOpen]);
 
   return (
     <button
