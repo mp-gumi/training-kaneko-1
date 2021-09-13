@@ -12,17 +12,22 @@ const Header = () => {
   return (
     <div
       css={css`
-        position: relative;
+        position: sticky;
+        top: 0;
       `}
     >
       <div
         css={css`
           align-items: center;
+          background-color: #fff;
           display: flex;
           height: 110px;
           justify-content: space-between;
-          position: sticky;
           width: 100%;
+          @media (max-width: 767px) {
+            height: 25vw;
+            position: relative;
+          }
         `}
       >
         <Logo />

@@ -8,6 +8,13 @@ const Logo = () => (
   <h1
     css={css`
       margin-left: 60px;
+      @media (max-width: 767px) {
+        left: 4.6875vw;
+        margin-left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     `}
   >
     <Link to="/">
