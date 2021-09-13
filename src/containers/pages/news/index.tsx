@@ -1,11 +1,6 @@
-import Header from "components/Header";
+import NewsTop from "components/NewsTop";
 import React from "react";
 
-const News = () => (
-  <div>
-    <Header />
-    news
-  </div>
-);
+const News = () => <NewsTop />;
 
 export default News;
