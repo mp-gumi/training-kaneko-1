@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Pages from "./pages";
-import Form from "./pages/from";
+import Form from "./pages/form";
 import News from "./pages/news";
 
 const Containers = () => (
