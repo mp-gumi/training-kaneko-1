@@ -46,12 +46,7 @@ const Hierarchy = () => {
         }
       `}
     >
-      <Link
-        css={css`
-          ${hierarchyCss}
-        `}
-        to="/"
-      >
+      <Link css={hierarchyCss} to="/">
         TOP
       </Link>
       <div
