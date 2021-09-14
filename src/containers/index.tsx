@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Pages from "./pages";
+import Form from "./pages/from";
 import News from "./pages/news";
 
 const Containers = () => (
@@ -10,6 +11,9 @@ const Containers = () => (
     </Route>
     <Route exact={true} path="/news">
       <News />
+    </Route>
+    <Route exact={true} path="/form">
+      <Form />
     </Route>
   </Switch>
 );
