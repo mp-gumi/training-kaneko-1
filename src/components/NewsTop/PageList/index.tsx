@@ -89,7 +89,7 @@ const PageList = () => {
           &:hover {
             ${currentStyle};
           }
-          &:hover > #arrow {
+          &:hover > .arrow {
             border-top: 1px solid #fff;
             border-right: 1px solid #fff;
           }
@@ -97,6 +97,7 @@ const PageList = () => {
         to="/news"
       >
         <div
+          className="arrow"
           css={css`
             border-top: 1px solid #8b8b8b;
             border-right: 1px solid #8b8b8b;
@@ -108,7 +109,6 @@ const PageList = () => {
             transform-origin: center;
             width: 7px;
           `}
-          id="arrow"
         />
       </Link>
     </div>
