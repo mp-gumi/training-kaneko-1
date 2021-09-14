@@ -10,12 +10,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div
-      css={css`
-        position: sticky;
-        top: 0;
-      `}
-    >
+    <header>
       <div
         css={css`
           align-items: center;
@@ -47,7 +42,7 @@ const Header = () => {
       >
         <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-    </div>
+    </header>
   );
 };
 
