@@ -6,34 +6,34 @@ import { Link } from "react-router-dom";
 const PageList = () => {
   const boxStyle = useMemo(
     () =>
-      `
-      border: 1px solid #ededed;
-      font-size: 14px;
-      font-weight: bold;
-      height: 44px;
-      margin-left: 10px;
-      position: relative;
-      transition: all 300ms ease;
-      width: 44px;
-    `,
+      css`
+        border: 1px solid #ededed;
+        font-size: 14px;
+        font-weight: bold;
+        height: 44px;
+        margin-left: 10px;
+        position: relative;
+        transition: all 300ms ease;
+        width: 44px;
+      `,
     []
   );
 
   const currentStyle = useMemo(
     () =>
-      `
-      background-color: #8d8d8d;
-      color: #fff;
-    `,
+      css`
+        background-color: #8d8d8d;
+        color: #fff;
+      `,
     []
   );
 
   const otherStyle = useMemo(
     () =>
-      `
-      background-color: #fff;
-      color: #000;
-    `,
+      css`
+        background-color: #fff;
+        color: #000;
+      `,
     []
   );
 

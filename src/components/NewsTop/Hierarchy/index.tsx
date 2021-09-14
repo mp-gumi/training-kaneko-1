@@ -6,29 +6,29 @@ import { Link } from "react-router-dom";
 const Hierarchy = () => {
   const hierarchyCss = useMemo(
     () =>
-      `
-  color: #888;
-  font-size: 12px;
-  font-weight: bold;
-  position: relative;
-  text-decoration: none;
-  @media(max-width: 767px) {
-    font-size: 3.4375vw;
-  }
-  &:after {
-    background-color: #888;
-    bottom: -8px;
-    content: "";
-    height: 1px;
-    left: 0;
-    transition: width 300ms;
-    position: absolute;
-    width: 0;
-  }
-  &:hover::after {
-    width: 100%;
-  }
-`,
+      css`
+        color: #888;
+        font-size: 12px;
+        font-weight: bold;
+        position: relative;
+        text-decoration: none;
+        @media (max-width: 767px) {
+          font-size: 3.4375vw;
+        }
+        &:after {
+          background-color: #888;
+          bottom: -8px;
+          content: "";
+          height: 1px;
+          left: 0;
+          transition: width 300ms;
+          position: absolute;
+          width: 0;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      `,
     []
   );
 
@@ -65,12 +65,7 @@ const Hierarchy = () => {
           width: 6px;
         `}
       />
-      <Link
-        css={css`
-          ${hierarchyCss}
-        `}
-        to="/news"
-      >
+      <Link css={hierarchyCss} to="/news">
         NEWS
       </Link>
     </div>
