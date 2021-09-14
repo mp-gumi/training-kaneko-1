@@ -10,19 +10,19 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div
-      css={css`
-        position: relative;
-      `}
-    >
+    <header>
       <div
         css={css`
           align-items: center;
+          background-color: #fff;
           display: flex;
           height: 110px;
           justify-content: space-between;
-          position: sticky;
           width: 100%;
+          @media (max-width: 767px) {
+            height: 25vw;
+            position: relative;
+          }
         `}
       >
         <Logo />
@@ -42,7 +42,7 @@ const Header = () => {
       >
         <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-    </div>
+    </header>
   );
 };
 

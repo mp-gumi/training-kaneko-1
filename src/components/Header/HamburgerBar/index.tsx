@@ -22,6 +22,13 @@ const HamburgerBar = ({ isOpen, setIsOpen }: HamburgerBarProps) => {
         height: 24px;
         margin-right: 5.46875vw;
         width: 38px;
+        @media (max-width: 767px) {
+          margin-right: 0;
+          position: absolute;
+          right: 5.46875vw;
+          top: 50%;
+          transform: translateY(-50%);
+        }
         @media (min-width: 767px) {
           display: none;
         }
