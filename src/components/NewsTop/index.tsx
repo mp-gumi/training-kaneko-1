@@ -14,7 +14,15 @@ const NewsTop = () => {
         background-color: #f6f6f6;
       `}
     >
-      <Header />
+      <div
+        css={css`
+          position: sticky;
+          top: 0;
+        `}
+      >
+        <Header />
+      </div>
+
       <Hierarchy />
       <div
         css={css`
