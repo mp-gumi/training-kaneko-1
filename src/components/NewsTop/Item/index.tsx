@@ -71,10 +71,10 @@ const Item = () => {
               max-width: 1060px;
               text-decoration: none;
               @media (min-width: 767px) {
-                &:hover > #div > #image {
+                &:hover > div > .image {
                   transform: scale(1.05);
                 }
-                &:hover > #div > #title {
+                &:hover > div > .title {
                   color: #f3981c;
                 }
               }
@@ -96,17 +96,16 @@ const Item = () => {
                   height: 100%;
                 }
               `}
-              id="div"
             >
               <img
                 alt=""
+                className="image"
                 css={css`
                   height: 100%;
                   object-fit: cover;
                   transition: 400ms;
                   width: 100%;
                 `}
-                id="image"
                 src={image}
               />
             </div>
@@ -114,10 +113,9 @@ const Item = () => {
               css={css`
                 padding-left: 20px;
                 @media (max-width: 767px) {
-                  padding: 3.125vw 0 0 0;
+                  padding: 3.125vw 0 0;
                 }
               `}
-              id="div"
             >
               <div
                 css={css`
@@ -151,6 +149,7 @@ const Item = () => {
                 </div>
               </div>
               <h3
+                className="title"
                 css={css`
                   color: #000;
                   font-size: 16px;
@@ -160,7 +159,6 @@ const Item = () => {
                     font-size: 4.375vw;
                   }
                 `}
-                id="title"
               >
                 {title}
               </h3>
@@ -176,8 +174,7 @@ const Item = () => {
       css={css`
         padding: 90px 0 60px;
         @media (max-width: 767px) {
-          padding-top: 11.71875vw;
-          padding-bottom: 14.84375vw;
+          padding: 11.71875vw 0 14.84375vw;
         }
       `}
     >
